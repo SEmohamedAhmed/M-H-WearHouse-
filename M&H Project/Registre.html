@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/login_icon.png">
+    <style>
+        body {
+            background: rgb(230 220 220);
+        }
+
+        hr {
+            color: #bbb;
+            opacity: .3;
+
+        }
+
+        .Reg {
+            width: 440px;
+            margin: 0 auto;
+            padding: 16px;
+            background: #ebebeb;
+            position: absolute;
+            top: 20%;
+            left: 35%;
+        }
+
+        .Reg h1 {
+            font-size: 30px;
+            text-align: center;
+            color: rgb(117, 25, 25);
+        }
+
+        .Reg input {
+            width: 85%;
+            border-style: solid;
+            border-width: 1px;
+            padding: 15px;
+            box-sizing: border-box;
+            margin: 5px;
+        }
+
+        .gender {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .gender select {
+            width: 20%;
+            border: 0;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        button {
+            border: 0;
+            background: #D2691E;
+            padding: 8px;
+            color: #fff;
+            border-radius: 7px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .login {
+            margin-left: 60px;
+        }
+
+        .login a {
+            text-decoration: none;
+            color: #0000FF;
+            font-weight: bold;
+        }
+    </style>
+    <title>Registration</title>
+</head>
+
+<body>
+    <div class="Reg">
+        <h1>Registration</h1>
+        <hr>
+        <form>
+            <input type="text" name="username" id="username" placeholder="Username" required><br>
+            <input type="password" name="password" id="password" placeholder="Password" required><br>
+            <input type="email" placeholder="E-mail" title="its optional" required><br>
+            <hr>
+            <button id="submit">Register</button>
+            <span class="login">or you have an account <a href="/login.html">login</a></span>
+
+        </form>
+    </div>
+
+    <script>
+        const submitButton = document.getElementById("submit");
+        submitButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            let userInput = document.getElementById("username");
+            let passwordInput = document.getElementById("password");
+            let accounts = JSON.parse(localStorage.getItem("accounts")) || [];
+            let newAccount = {
+                username: userInput.value,
+                password: passwordInput.value,
+                type: "user"
+            }
+            accounts.push(newAccount);
+            localStorage.setItem('accounts', JSON.stringify(accounts));
+            if (userInput.value == "" && passwordInput.value == "") {
+            alert("Please write your username,password (E-mail is optional)");
+            }
+            else {window.location.href = "/login.html";}
+        });
+    </script>
+</body>
+    <script src="/Admin Page/home.js"></script>
+    <script src="/Admin Page/admin.js"></script>
+</html>

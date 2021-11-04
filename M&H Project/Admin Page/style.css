@@ -1,0 +1,37 @@
+:root {
+    --main-color :red;
+    --main-font:"Times New Roman" , Times,serif;
+}
+body {
+    background-color: var(--main-color);
+}
+h1.homelink a {
+    text-align: center;
+    font-weight: bold;
+    text-decoration:solid;
+    color: black;
+}
+h1.homelink {
+    text-align: center;
+    margin: 20px;
+}
+#PriceIn {
+    margin: 20px;
+}
+button {
+    border-radius: 30%;
+    width: 75px;
+    height: 60px;
+    background-color: darkgray;
+    color: black;
+    font-weight: bold;
+    display: inline;
+    margin: 30px;
+    outline: none;
+    cursor: pointer;
+}
+hr {
+    height: 2px;
+    color: black;
+    outline: none;
+}

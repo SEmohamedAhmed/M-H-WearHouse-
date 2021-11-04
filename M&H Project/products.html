@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Products</title>
+        <link rel="icon" href="img/websiteicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root{
+    --white-light: rgba(255, 255, 255, 0.5);
+    --alice-blue: #f8f9fa;
+    --carribean-green: #e66565;
+    --gray: #ededed;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+p {
+    font-weight: bold;
+}
+/* Utility stylings */
+img{
+    width: 100%;
+    display: block;
+}
+.container{
+    width: 88vw;
+    margin: 0 auto;
+}
+.lg-title,
+.md-title,
+.sm-title{
+    font-family: 'Roboto', sans-serif;
+    padding: 0.6rem 0;
+    text-transform: capitalize;
+}
+.lg-title{
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 1.3rem 0;
+    opacity: 0.9;
+}
+.md-title{
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+.sm-title{
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* product section */
+.products{
+    background: var(--alice-blue);
+    padding: 3.2rem 0;
+}
+
+.product{
+    margin: 2rem;
+    position: relative;
+}
+.product-content{
+    background: var(--gray);
+    padding: 3rem 0.5rem 2rem 0.5rem;
+    cursor: pointer;
+}
+.product-img{
+    background: var(--white-light);
+    box-shadow: 0 0 20px 10px var(--white-light);
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.product-btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.btn-cart, .btn-buy{
+    background: transparent;
+    border: 1px solid black;
+    padding: 0.8rem 0;
+    width: 125px;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all 0.6s ease;
+}
+.btn-cart{
+    background: black;
+    color: white;
+    z-index: 1;
+
+}
+.btn-cart:hover{
+    background: var(--carribean-green);
+}
+.btn-buy{
+    background: white;
+    z-index: 1;
+
+}
+.btn-buy:hover{
+    background: var(--carribean-green);
+    color: #fff;
+
+}
+.product-info{
+    background: white;
+    padding: 2rem;
+}
+.product-info-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rating span{
+    color: var(--carribean-green);
+}
+.product-name{
+    color: black;
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#Price{
+    padding-top: 0.6rem;
+    padding-right: 0.6rem;
+    display: inline-block;
+}
+
+.product-img img{
+    transition: transform 0.6s ease;
+}
+.product:hover .product-img img{
+    transform: scale(1.1);
+}
+.product:hover .product-img{
+    background: var(--carribean-green);
+}
+.product:hover .product-btns{
+    opacity: 1;
+}
+.off-info .sm-title{
+    background: var(--carribean-green);
+    color: white;
+    display: inline-block;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    z-index: 1;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 992px){
+    .product-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-col-r-bottom{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1200px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 1336px){
+    .product-items{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .product-collection-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-col-left{
+        height: 121.5vh;
+    }
+}
+h2 {
+    text-align: center;
+    padding-bottom: 35px;
+    font-size: 30px;
+    color: rgb(151, 94, 94);
+    font-family: fantasy;
+}
+h1.homelink a {
+    text-align: center;
+    font-weight: bold;
+    text-decoration:solid;
+}
+h1.homelink {
+    text-align: center;
+    margin: 20px;
+
+}
+.footer {
+    background: rgb(46, 44, 44);
+    color: #8a8a8a;
+    font-size: 15px;
+    padding: 60px 0 20px;
+    justify-items: left;
+}
+.footer .col1 {
+flex-basis: 30%;
+}
+.footer img {
+    width: 150px;
+    height: 130px;
+    opacity: 1;
+}
+.footer a {
+    text-decoration: none;
+    color: #555655; 
+    font-weight: bold;
+}
+.footer p{
+    color: #8a8a8a;
+}
+.footer h3 {
+color: #eee;
+text-align: right;
+}
+.footer h2.foot {
+    padding-bottom: 4px;
+    font-size: 25px;
+    color: rgb(151, 94, 94);
+    font-family: fantasy;
+    padding-left: 30px;
+    text-align: left;
+}
+ul{
+list-style-type: none;
+}
+.footer li {
+    text-align: right;
+}
+.footer-col2 {
+    min-width: 250px;
+    margin-bottom: 20px;
+    flex-basis: 12%;
+    text-align: center;
+}
+.footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+.copyright {
+    text-align: center;
+}
+
+div .Caption {
+font-size: 55px;
+font-weight: bold;
+font-family: fantasy;
+text-align: center;
+padding-bottom: 3px;
+}
+
+</style>
+        <!-- font awesome -->
+    </head>
+<body>
+        <div class = "products">
+            <div class = "container">
+                <h1 class = "lg-title">All Products</h1>
+                <div class = "product-items">
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/jacket1.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            Jacket
+                            <p id = "Price1">$ 150.00</p>
+                        </div>
+                        <div class = "off-info">
+                            <h2 class = "sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/jean1.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            jeans
+                            <p id = "Price2">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/jean2.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            jeans
+                            <p id = "Price3">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/jean3.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            jeans
+                            <p id = "Price4">$ 150.00</p>
+                        </div>
+
+                        <div class = "off-info">
+                            <h2 class = "sm-title">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class="product">
+                        <div class="product-content">
+                            <div class="product-img">
+                                <img src="/Products/tr1.jpg" alt="product image">
+                            </div>
+                            <div class="product-btns">
+                                <button type="button" class="btn-cart"> add to cart
+                                    <span><i class="fas fa-plus"></i></span>
+                                </button>
+                                <button type="button" class="btn-buy"> buy now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+                    
+                        <div class="product-info">
+                            <div class="product-info-top">
+                                <h2 class="sm-title">Rating</h2>
+                                <div class="rating">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="far fa-star"></i></span>
+                                </div>
+                            </div>
+                            trouser
+                            <p id="Price5">$ 150.00</p>
+                    
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S1.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price6">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S2.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price7">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S3.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price8">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S4.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price9">$ 150.00</p>
+                        </div>
+
+                        <div class = "off-info">
+                            <h2 class = "sm-title">35% off</h2>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                                        <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S5.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price10">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S6.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price11">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/S7.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            shirt
+                            <p id = "Price12">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/SS1.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            sweetshirt
+                            <p id = "Price13">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/SS2.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            sweetshirt
+                            <p id = "Price14">$ 150.00</p>
+                    </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/SS3.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            sweetshirt
+                            <p id = "Price15">$ 150.00</p>
+                         </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/SS4.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            sweetshirt
+                            <p id = "Price16">$ 150.00</p>
+                         </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/su.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            Full outfit
+                            <p id = "Price17">$ 150.00</p>
+                         </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/su2.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            Full outfit
+                            <p id = "Price18">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+                    <div class = "product">
+                        <div class = "product-content">
+                            <div class = "product-img">
+                                <img src = "/Products/su3.jpg" alt = "product image">
+                            </div>
+                            <div class = "product-btns">
+                                <button type = "button" class = "btn-cart"> add to cart
+                                    <span><i class = "fas fa-plus"></i></span>
+                                </button>
+                                <button type = "button" class = "btn-buy"> buy now
+                                    <span><i class = "fas fa-shopping-cart"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class = "product-info">
+                            <div class = "product-info-top">
+                                <h2 class = "sm-title">Rating</h2>
+                                <div class = "rating">
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "fas fa-star"></i></span>
+                                    <span><i class = "far fa-star"></i></span>
+                                </div>
+                            </div>
+                            Full outfit
+                            <p id = "Price19">$ 150.00</p>
+                        </div>
+                    </div>
+                    <!-- eproduct -->
+                    <!-- sproduct -->
+<div class = "product">
+    <div class = "product-content">
+        <div class = "product-img">
+            <img src = "/Products/su4.jpg" alt = "product image">
+        </div>
+        <div class = "product-btns">
+            <button type = "button" class = "btn-cart"> add to cart
+                <span><i class = "fas fa-plus"></i></span>
+            </button>
+            <button type = "button" class = "btn-buy"> buy now
+                <span><i class = "fas fa-shopping-cart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class = "product-info">
+        <div class = "product-info-top">
+            <h2 class = "sm-title">Rating</h2>
+            <div class = "rating">
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "far fa-star"></i></span>
+            </div>
+        </div>
+        Full outfit
+        <p id = "Price20">$ 150.00</p>
+        
+    </div>
+</div>
+<!-- eproduct -->
+<!-- sproduct -->
+<div class = "product">
+    <div class = "product-content">
+        <div class = "product-img">
+            <img src = "/Products/su5.jpg" alt = "product image">
+        </div>
+        <div class = "product-btns">
+            <button type = "button" class = "btn-cart"> add to cart
+                <span><i class = "fas fa-plus"></i></span>
+            </button>
+            <button type = "button" class = "btn-buy"> buy now
+                <span><i class = "fas fa-shopping-cart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class = "product-info">
+        <div class = "product-info-top">
+            <h2 class = "sm-title">Rating</h2>
+            <div class = "rating">
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "far fa-star"></i></span>
+            </div>
+        </div>
+        Full outfit
+        <p id = "Price21">$ 150.00</p>
+        
+    </div>
+</div>
+<!-- eproduct -->
+<!-- sproduct -->
+<div class = "product">
+    <div class = "product-content">
+        <div class = "product-img">
+            <img src = "/Products/TS1.jpg" alt = "product image">
+        </div>
+        <div class = "product-btns">
+            <button type = "button" class = "btn-cart"> add to cart
+                <span><i class = "fas fa-plus"></i></span>
+            </button>
+            <button type = "button" class = "btn-buy"> buy now
+                <span><i class = "fas fa-shopping-cart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class = "product-info">
+        <div class = "product-info-top">
+            <h2 class = "sm-title">Rating</h2>
+            <div class = "rating">
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "far fa-star"></i></span>
+            </div>
+        </div>
+        T-shirt
+        <p id = "Price22">$ 150.00</p>
+        
+    </div>
+</div>
+<!-- eproduct -->
+<!-- sproduct -->
+<div class = "product">
+    <div class = "product-content">
+        <div class = "product-img">
+            <img src = "/Products/TS2.jpg" alt = "product image">
+        </div>
+        <div class = "product-btns">
+            <button type = "button" class = "btn-cart"> add to cart
+                <span><i class = "fas fa-plus"></i></span>
+            </button>
+            <button type = "button" class = "btn-buy"> buy now
+                <span><i class = "fas fa-shopping-cart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class = "product-info">
+        <div class = "product-info-top">
+            <h2 class = "sm-title">Rating</h2>
+            <div class = "rating">
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "far fa-star"></i></span>
+            </div>
+        </div>
+        T-shirt
+        <p id = "Price23">$ 150.00</p>
+        
+    </div>
+</div>
+<!-- eproduct -->
+<!-- sproduct -->
+<div class = "product">
+    <div class = "product-content">
+        <div class = "product-img">
+            <img src = "/Products/TS3.jpg" alt = "product image">
+        </div>
+        <div class = "product-btns">
+            <button type = "button" class = "btn-cart"> add to cart
+                <span><i class = "fas fa-plus"></i></span>
+            </button>
+            <button type = "button" class = "btn-buy"> buy now
+                <span><i class = "fas fa-shopping-cart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class = "product-info">
+        <div class = "product-info-top">
+            <h2 class = "sm-title">Rating</h2>
+            <div class = "rating">
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "far fa-star"></i></span>
+            </div>
+        </div>
+        T-shirt
+        <p id = "Price24">$ 150.00</p>
+        
+    </div>
+</div>
+<!-- eproduct -->
+<!-- sproduct -->
+<div class = "product">
+    <div class = "product-content">
+        <div class = "product-img">
+            <img src = "/Products/TS4.jpg" alt = "product image">
+        </div>
+        <div class = "product-btns">
+            <button type = "button" class = "btn-cart"> add to cart
+                <span><i class = "fas fa-plus"></i></span>
+            </button>
+            <button type = "button" class = "btn-buy"> buy now
+                <span><i class = "fas fa-shopping-cart"></i></span>
+            </button>
+        </div>
+    </div>
+
+    <div class = "product-info">
+        <div class = "product-info-top">
+            <h2 class = "sm-title">Rating</h2>
+            <div class = "rating">
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "fas fa-star"></i></span>
+                <span><i class = "far fa-star"></i></span>
+            </div>
+        </div>
+        T-shirt
+        <p id = "Price25">$ 150.00</p>
+        
+    </div>
+</div>
+<!-- eproduct -->
+                </div>
+            </div>
+        </div>
+        <h1 class="homelink"><a href="/Home_Page.html" target="_blank">Go to home page from here</a></h1>
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                    <div class="footer-col1">
+                    <img src="/Products/footer_logo.PNG">  
+                    <span><h2 class="foot">we seek to provide you best quality&best price</h2> </span>  
+                    </div>
+                    <h3>Follow us</h3>
+                    <div class="footer-col2">
+                    <ul>
+                    <li><a href="https://www.facebook.com/"  target="_blank">Facebook</a> </li>
+                    <li><a href="https://www.instagram.com/"  target="_blank">Instagram</a> </li>
+                    <li><a href="https://www.youtube.com/" target="_blank">Youtube</a> </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">copyright©2021</p>
+            </div>
+        </footer>
+        
+<script src="/Admin Page/changeprice.js"></script>
+<script src="/Admin Page/admin.js"></script> 
+</body>
+</html>
